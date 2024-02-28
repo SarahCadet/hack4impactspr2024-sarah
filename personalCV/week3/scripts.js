@@ -1,6 +1,6 @@
 console.log("Hello World");
 //print out all of the projects
-const projects = document.querySelector(".project");
+const projects = document.getElementsByClassName("project");
 console.log(projects);
 //changing the name
 const myName = document.querySelector("#my-name");
@@ -32,4 +32,17 @@ window.open("https://linkedin.com");
 const gitHubImg = document.querySelector("#github-img");
 gitHubImg.addEventListener("click", function(){
 window.open("https://github.com");
+});
+
+const hideProjectBtn = document.getElementById("hidebtn");
+const showProjectBtn = document.getElementById("showbtn");
+hideProjectBtn.addEventListener("click", function() {
+  for(let i = 0; i < projects.length; i++){
+    projects[i].style.visibility = "hidden";
+  }
+});
+showProjectBtn.addEventListener("click", function() {
+  for(let i = 0; i < projects.length; i++){
+    projects[i].style.visibility = "visible";
+  }
 });
